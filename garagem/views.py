@@ -2,8 +2,8 @@ from django.shortcuts import render
 
 from rest_framework.viewsets import ModelViewSet
 
-from livraria.models import Categoria, Marca, Carro
-from livraria.serializers import CategoriaSerializer, MarcaSerializer, CarroSerializer, CarroDetailSerializer
+from garagem.models import Categoria, Marca, Carro
+from garagem.serializers import CategoriaSerializer, MarcaSerializer, CarroSerializer, CarroDetailSerializer
 
 class CategoriaViewSet(ModelViewSet):
     queryset = Categoria.objects.all()

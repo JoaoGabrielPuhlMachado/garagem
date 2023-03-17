@@ -3,7 +3,7 @@ from django.urls import include, path
 
 from rest_framework.routers import DefaultRouter
 
-from livraria.views import CategoriaViewSet, MarcaViewSet, CarroViewSet
+from garagem.views import CategoriaViewSet, MarcaViewSet, CarroViewSet
 
 router = DefaultRouter()
 router.register(r"categorias", CategoriaViewSet)

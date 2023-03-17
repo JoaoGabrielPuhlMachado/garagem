@@ -1,6 +1,6 @@
 from rest_framework.serializers import ModelSerializer
 
-from livraria.models import Categoria, Marca, Carro
+from garagem.models import Categoria, Marca, Carro
 
 class CategoriaSerializer(ModelSerializer):
     class Meta:
