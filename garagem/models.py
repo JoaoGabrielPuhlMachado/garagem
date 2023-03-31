@@ -33,7 +33,7 @@ class Veiculo(models.Model):
   categoria = models.ForeignKey(Categoria, on_delete=models.PROTECT, related_name="veiculos")
   cor = models.ForeignKey(Cor, on_delete=models.PROTECT, related_name="veiculos")
   ano = models.IntegerField(null=True, blank=True)
-  preco = models.FloatField(null=True, blank=True)
+  preco = models.DecimalField(max_digits=10, decimal_places=2, default=0, null=True, blank=True)
 
   def __str__(self):
-     return f"{self.marca}{self.modelo}{self.ano} ({self.cor})"
+     return f"{self.marca} {self.categoria} {self.ano} ({self.cor})"
