@@ -7,4 +7,3 @@ admin.site.register(Marca)
 admin.site.register(Veiculo)
 admin.site.register(Acessorio)
 admin.site.register(Cor)
-
