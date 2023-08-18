@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from garagem.models import Categoria, Marca, Veiculo, Acessorio, Cor
+from garagem.models import Categoria, Marca, Veiculo, Acessorio, Cor, Modelo
 
 @admin.register(Marca)
 class MarcaAdmin(admin.ModelAdmin):
@@ -30,10 +30,17 @@ class CorAdmin(admin.ModelAdmin):
     list_filter = ('descricao',)
     ordering = ('descricao',)
 
+@admin.register(Modelo)
+class ModeloAdmin(admin.ModelAdmin):
+    list_display = ('nome',)
+    search_fields = ('nome',)
+    list_filter = ('nome',)
+    ordering = ('nome',)
+
 @admin.register(Veiculo)
 class VeiculoAdmin(admin.ModelAdmin):
-    list_display = ('descricao', 'categoria', 'marca', 'cor')
-    search_fields = ('descricao', 'marca__nome', 'categoria__descricao', 'acessorio__descricao', 'acessorio__descricao')
-    list_filter = ('categoria', 'marca', 'acessorio', 'cor' )
-    ordering = ('descricao', 'marca', 'categoria', 'cor', 'acessorio')
+    list_display = ('descricao', 'modelo', 'cor')
+    search_fields = ('descricao', 'modelo__nome', 'marca__nome', 'categoria__descricao', 'acessorio__descricao', 'acessorio__descricao')
+    list_filter = ('acessorio', 'cor', )
+    ordering = ('descricao', 'cor', 'acessorio')
     list_per_page = 25

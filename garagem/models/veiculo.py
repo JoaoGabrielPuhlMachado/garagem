@@ -1,17 +1,14 @@
 from django.db import models
 from uploader.models import Image
 
-from garagem.models import Categoria, Acessorio, Cor, Marca
+from garagem.models import Modelo, Acessorio, Cor
 
 class Veiculo(models.Model):
     capa = models.ManyToManyField(
         Image,
         related_name="+",
     )
-    marca = models.ForeignKey(Marca, on_delete=models.PROTECT, related_name="veiculos")
-    categoria = models.ForeignKey(
-        Categoria, on_delete=models.PROTECT, related_name="veiculos"
-    )
+    modelo = models.ForeignKey(Modelo, on_delete=models.PROTECT, related_name="veiculos")
     cor = models.ForeignKey(Cor, on_delete=models.PROTECT, related_name="veiculos")
     ano = models.IntegerField(null=True, blank=True)
     preco = models.DecimalField(
