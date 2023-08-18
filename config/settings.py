@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     "uploader",
     "drf_spectacular",
     "garagem",
+    "django_extensions",
 ]
 
 MIDDLEWARE = [
@@ -55,6 +56,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "config.wsgi.application"
+
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.IsAuthenticated",
