@@ -40,7 +40,7 @@ class ModeloAdmin(admin.ModelAdmin):
 @admin.register(Veiculo)
 class VeiculoAdmin(admin.ModelAdmin):
     list_display = ('descricao', 'modelo', 'cor')
-    search_fields = ('descricao', 'modelo__nome', 'marca__nome', 'categoria__descricao', 'acessorio__descricao', 'acessorio__descricao')
-    list_filter = ('acessorio', 'cor', )
+    search_fields = ('descricao', 'modelo__nome', 'marca__nome', 'categoria__descricao', 'cor__descricao', 'acessorio__descricao')
+    list_filter = ('acessorio', 'cor','modelo__marca','modelo__categoria', 'modelo__nome' )
     ordering = ('descricao', 'cor', 'acessorio')
     list_per_page = 25
