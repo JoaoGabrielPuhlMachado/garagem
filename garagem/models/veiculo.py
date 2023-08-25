@@ -18,7 +18,7 @@ class Veiculo(models.Model):
     acessorio = models.ManyToManyField(Acessorio, related_name="veiculos")
 
     def __str__(self):
-        return f"{self.modelo} {self.ano} ({self.cor})"
+        return f"{self.descricao}{self.modelo} {self.ano} ({self.cor})"
 
     class Meta:
         verbose_name_plural = "veículos"
